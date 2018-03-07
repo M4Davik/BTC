@@ -1,0 +1,2 @@
+# BTC
+Script de minerar
