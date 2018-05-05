@@ -109,29 +109,6 @@ else
 screen -dmS yescypt yescrypt -a yescrypt -o stratum+tcp://mine.zpool.ca:6233 -u $wallet -t $core -R 30
 fi
 clear
-
-loop () {
-echo '#!/bin/bash
-echo -e "\033[1;32mSERVIDOR EM LOOP, IRÃ REINICIAR AUTOMATICAMENTE EM 15 MINUTOS\n\033[1;36m"
-echo -e "--------------------------RODANDO------------------------------\033[1;34m"
-for prog in $(seq 30); do
-echo -n "|"
-sleep 1s
-echo -n "|"
-sleep 1s
-done
-echo -ne "[100%]\033[1;36m"
-echo ""
-echo -e "--------------------FINALIZADO-REINICIANDO------------------------\033[0m"
-reboot
-reboot
-reboot
-exit
-exit' > /bin/loop_vps
-chmod +x /bin/loop_vps
-screen -dmS loop_reboot /bin/loop_vps
-}
-
 sleep 2
 echo "$ve_f MINERAÇAO INICIADA UTILIZE (screen -x yescrypt)$cor_off"
 ;;
